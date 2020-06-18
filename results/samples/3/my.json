@@ -1,0 +1,64 @@
+{
+  "rx": 800, "ry": 800,
+
+  "photon_num": 20000,
+  "total_round": 100,
+  "total_brightness": 1000,
+  "round_decay": 0.95,
+  "initial_r": 5,
+  "r_decay": 0.8,
+
+  "camera": {
+    "type": "default",
+    "position": {"x": 20, "y": -10, "z": 0},
+    "dx": {"x": -20, "y": 0, "z": 0},
+    "dy": {"x": 0, "y": 20, "z": 0},
+    "origin": {"x": 21, "y": -8, "z": -50},
+    "fdepth": 0.02
+  },
+
+  "lights": [
+    {
+      "type": "point_light",
+      "name": "light",
+      "brightness": 1,
+      "position": {"x": 25, "y": 15,"z": 10},
+      "texture": {"type": "pure", "r": 1, "g": 1, "b": 1},
+      "material": {"refl": 0, "diff": 0, "spec": 0, "refr": 0.0, "refr_k": 1.0}
+    }
+  ],
+
+  "objects": [
+    {
+      "type":"sphere",
+      "name":"ball_right",
+      "center":{"x":3,"y":6,"z":10},
+      "radius":3,
+      "texture": {"type": "pure","r": 0.99,"g": 0.99,"b": 0.99},
+      "material":{"refl": 0.3, "diff": 0, "spec": 0.6, "refr": 0.9, "refr_k": 1.3}
+    },
+    {
+      "type":"sphere",
+      "name":"ball_left",
+      "center":{"x":3,"y":-2,"z":7},
+      "radius":3,
+      "texture": {"type": "pure","r": 0.99,"g": 0.99,"b": 0.99},
+      "material":{"refl": 0.3, "diff": 0, "spec": 0.6, "refr": 0.9, "refr_k": 1.3}
+    },
+    {
+      "type": "plane",
+      "name": "bottom",
+      "position": {"x": 0, "y": 0, "z": 0},
+      "dx": {"x": 0, "y": 0, "z": 1},
+      "dy": {"x": 0, "y": 1, "z": 0},
+      "texture": {"type":"picture", "filename":"materials/wood.jpg", "rx":40, "ry":40},
+      "material": {"refl": 0, "diff": 1, "spec": 0, "refr": 0, "refr_k": 0},
+      "border": false
+    }
+  ],
+
+  "bg_color": {"type": "pure", "r": 0, "g": 0, "b": 0},
+
+  "max_depth": 20, "max_jump": 20,
+  "start_rows": 0, "start_cols": 0
+}
